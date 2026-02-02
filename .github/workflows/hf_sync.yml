@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Sync with Hugging Face
-      uses: nateraw/huggingface-sync-action@v0.0.5
+      uses: not-lain/huggingface-sync-action@fix
       with:
         github_repo_id: not-lain/textify
         huggingface_repo_id: not-lain/textify
