@@ -38,15 +38,17 @@ background_remover = GradioNode(
     },
 )
 
+
 def crop_alpha(image: Image) -> Image:
     """crops image keep only the RGB channels"""
-    
+
     # convert from str to PIL Image
     image = load_img(image).convert("RGBA")
     bbox = image.getbbox(alpha_only=True)
     image = image.crop(bbox)
     # store as str and pass as path
-    return load_img(image,output_type="str")
+    return load_img(image, output_type="str")
+
 
 cropper = FnNode(
     fn=crop_alpha,
@@ -60,7 +62,8 @@ cropper = FnNode(
 
 
 graph = Graph(
-    name="Transparent Background Image Generator", nodes=[glm_image, background_remover, cropper]
+    name="Transparent Background Image Generator",
+    nodes=[glm_image, background_remover, cropper],
 )
 
 graph.launch()
