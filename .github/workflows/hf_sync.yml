@@ -15,5 +15,6 @@ jobs:
         github_repo_id: not-lain/textify
         huggingface_repo_id: not-lain/textify
         repo_type: space
+        private: false
         space_sdk: gradio
         hf_token: ${{ secrets.HF_TOKEN }}
